@@ -1,0 +1,119 @@
+.App {
+  display: flex;
+  gap: 2px;
+  margin: 10px;
+}
+
+.rateCard {
+  display: flex;
+  width: 210px;
+  height: 300px;
+
+  .cardTitle {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: white;
+  }
+
+  .cardContent {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    height: 130px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .rubles {
+      position: fixed;
+      margin-top: -50px;
+      margin-left: -140px;
+    }
+
+    .price {
+      font-size: 65px;
+      font-weight: 600;
+    }
+
+    .perMonth {
+      position: fixed;
+      margin-bottom: -40px;
+      margin-right: -150px;
+    }
+  }
+
+  .speedUntil {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .amountOfTrafic {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(128, 128, 128, 0.178);
+    height: 60px;
+    line-height: 1.5;
+  }
+}
+
+.limitless300 {
+  .cardTitle{
+  background-color: rgb(82, 139, 185);
+  } 
+  
+  .cardContent {
+    background-color: rgba(97, 168, 226, 0.87);
+  }
+}
+
+.limitless450 {
+  .cardTitle {
+  background-color: rgb(35, 139, 99);
+  }
+
+  .cardContent {
+    background-color: rgba(38, 150, 113, 0.877);
+  }
+}
+
+.limitless550 {
+  .cardTitle {
+  background-color: rgba(161, 36, 36, 0.89);
+  }
+  .cardContent {
+    background-color: rgb(204, 76, 76);
+  }
+}
+
+.limitless1000 {
+  .cardTitle { 
+  background-color: rgb(51, 51, 51);
+  }
+  .cardContent {
+    background-color: rgb(51, 51, 51, 0.85);
+
+    .rubles {
+      position: fixed;
+      margin-top: -50px;
+      margin-left: -170px;
+    }
+
+    .perMonth {
+      position: fixed;
+      margin-bottom: -40px;
+      margin-right: -170px;
+    }
+  }
+}
+
+.highlighted {
+  box-shadow: 0 0 5px 5px rgba(105, 105, 105, 0.281);
+  .cardTitle { 
+    height: 55px;
+  }
+}

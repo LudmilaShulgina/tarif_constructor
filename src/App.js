@@ -4,7 +4,9 @@ import TatifConstructor from './components/TatifConstructor'
 
 function App() {
   return (
-    <TatifConstructor/>
+    <>
+      <TatifConstructor/>
+    </>
   );
 }
 

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Card } from 'antd';
 
 export default function Rate(props) {
     //  #1
     const {id, title, price, speed, setHighlighted, highlighted } = props
+
+    // Аналогично    componentDidUpdate:
+    useEffect(() => {
+        if(highlighted){
+            console.log(11, `В ${id} параметр highlighted теперь ${highlighted}`);
+        }
+    },[highlighted]);
 
     let highlightedClass = ("highlighted");
 
@@ -20,6 +27,7 @@ export default function Rate(props) {
                 </div>
                 <p className = 'speedUntil'>до {speed} мб/сек</p>
                 <p className = 'amountOfTrafic'>Объем включенного трафика не ограничен</p>
+                <a href={'https://getbootstrap.com/docs/5.1/examples/'}>Hello!</a>
             </Card>
         </div>
     );

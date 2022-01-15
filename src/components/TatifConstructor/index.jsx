@@ -12,7 +12,10 @@ export default function TarifConstructor() {
     // Сработает только один раз при создании компонента
     console.log(13, "componentDidMount");
     const savedTarif = localStorage.getItem('tarif');
-    setTarif(savedTarif);
+    if(savedTarif) {
+      setTarif(savedTarif);
+    }
+
 
     // Сработает только один раз при создании компонента
     return () => {
@@ -20,17 +23,26 @@ export default function TarifConstructor() {
     };
   },[]);
 
-  // Аналогично componentDidMount и componentDidUpdate:
+  //Аналогично componentDidMount и componentDidUpdate:
+  // useEffect(() => {
+  //   console.log(25, "Я происхожу всегда, при любом изменении компонента");
+  // });
+
   useEffect(() => {
-  });
+    if(tarif){
+      console.log(32, "tarif изменился");
+      writeToLocalStorage(tarif);
+    }
+  },[tarif]);
 
   const writeToLocalStorage = (id) => {
+    console.log('writeToLocalStorage', id)
     localStorage.setItem('tarif', id);
   }
 
   const handleChoose = (id) => {
     setTarif(id);
-    writeToLocalStorage(id);
+    // writeToLocalStorage(id);
   }
 
   return (

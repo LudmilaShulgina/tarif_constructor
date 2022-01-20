@@ -1,11 +1,13 @@
 import './App.scss';
-import TatifConstructor from './components/TatifConstructor'
+// import TatifConstructor from './components/TatifConstructor'
+import Constructor from './components/Constructor'
 
 
 function App() {
   return (
     <>
-      <TatifConstructor/>
+      {/*<TatifConstructor/>*/}
+      <Constructor/>
     </>
   );
 }

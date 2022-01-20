@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(5, 50px);
+  gap: 20px;
+}
+.wrapper{
+  padding: 100px;
+}
+
+.card{
+  font-size: 35px;
+  background: lightgrey;
+  text-align: center;
+}
+.card:hover{
+  cursor: pointer;
+  background: darkgrey;
+}
+
+.card.selected{
+  background: lightcoral;
+}

@@ -1,21 +1,26 @@
 import React, {useContext, useEffect} from 'react';
 import { Card } from 'antd';
 import { ThemeContext } from "../../context";
+import { WordsContext } from "../../wordsContext";
 
 export default function Rate(props) {
     //  #1
-    const {id, title, price, speed, setHighlighted, highlighted } = props
+    const {id, title, price, speed, setHighlighted, highlighted } = props;
 
     const { theme } = useContext(ThemeContext);
+    const { getWords } = useContext(WordsContext);
 
     // Аналогично    componentDidUpdate:
     useEffect(() => {
         if(highlighted){
-            console.log(11, `В ${id} параметр highlighted теперь ${highlighted}`);
+           // console.log(11, `В ${id} параметр highlighted теперь ${highlighted}`);
         }
     },[highlighted, id]);
 
-    let handleHighlighted = () => {setHighlighted(id);}
+    let handleHighlighted = () => {
+        getWords();
+        setHighlighted(id);
+    }
 
     return(
         <div className = {`rateCard ${highlighted ? "highlighted" : ""} rateCard__${theme}`} onClick = {handleHighlighted}>

@@ -12,17 +12,15 @@ function WordsContextProvider(props) {
   const getWords = () => {
     fetch('/api/words')
       .then((response) => response.json())
-      .then((response) => setWords({ words: response }))
+      .then((response) => setWords(response))
   }
 
   const saveWord = () => {
 
     const new_word={
-      english: "test",
-      russian: "тест",
-      tags: "common",
-      tags_json: "[\"u0442u0440u044fu043c\"]",
-      transcription: "[test]"
+      english: "cat",
+      russian: "кот",
+      transcription: "[cat]"
     }
 
     fetch('/api/words/add', {
@@ -33,7 +31,9 @@ function WordsContextProvider(props) {
       }
     })
       .then(res => res.json())
-      .then(res => console.log(36,res));
+      .then(() => {
+        getWords()
+      });
   }
 
   return (

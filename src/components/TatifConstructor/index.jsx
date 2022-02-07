@@ -10,7 +10,6 @@ export default function TarifConstructor() {
   // Аналогично componentDidMount && componentWillUnmount
   useEffect(() => {
     // Сработает только один раз при создании компонента
-    console.log(13, "componentDidMount");
     const savedTarif = localStorage.getItem('tarif');
     if(savedTarif) {
       setTarif(savedTarif);
@@ -19,7 +18,7 @@ export default function TarifConstructor() {
 
     // Сработает только один раз при создании компонента
     return () => {
-      console.log(18, "componentWillUnmount");
+
     };
   },[]);
 
@@ -30,13 +29,13 @@ export default function TarifConstructor() {
 
   useEffect(() => {
     if(tarif){
-      console.log(32, "tarif изменился");
+      //console.log(32, "tarif изменился");
       writeToLocalStorage(tarif);
     }
   },[tarif]);
 
   const writeToLocalStorage = (id) => {
-    console.log('writeToLocalStorage', id)
+    //console.log('writeToLocalStorage', id)
     localStorage.setItem('tarif', id);
   }
 

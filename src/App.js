@@ -1,14 +1,17 @@
+import React from "react";
 import './App.scss';
-// import TatifConstructor from './components/TatifConstructor'
+
+import {ThemeContextProvider} from "./context";
+import TatifConstructor from './components/TatifConstructor'
 import Constructor from './components/Constructor'
 
 
 function App() {
   return (
-    <>
-      {/*<TatifConstructor/>*/}
+    <ThemeContextProvider>
+      <TatifConstructor/>
       <Constructor/>
-    </>
+    </ThemeContextProvider>
   );
 }
 

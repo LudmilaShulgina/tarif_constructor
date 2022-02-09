@@ -1,5 +1,11 @@
-import React, { useState } from "react";
-const ThemeContext = React.createContext();
+import { useState, createContext } from "react";
+
+export interface ThemeContextProps {
+    theme: string,
+    toggleTheme?: ()=>void,
+}
+
+const ThemeContext = createContext<ThemeContextProps>({theme:'dark'});
 
 function ThemeContextProvider(props) {
     const [theme, setTheme] = useState("dark");

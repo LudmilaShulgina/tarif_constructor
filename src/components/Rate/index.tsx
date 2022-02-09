@@ -1,9 +1,19 @@
-import React, {useContext, useEffect} from 'react';
+import {useContext, useEffect} from 'react';
 import { Card } from 'antd';
 import { ThemeContext } from "../../context";
 import { WordsContext } from "../../wordsContext";
 
-export default function Rate(props) {
+export interface RateProps {
+    id: string,
+    title: string,
+    price: number,
+    speed: number,
+    setHighlighted: (id: string)=>void,
+    highlighted?: boolean
+}
+
+
+export default function Rate(props:RateProps) {
     //  #1
     const {id, title, price, speed, setHighlighted, highlighted } = props;
 

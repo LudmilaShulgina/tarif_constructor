@@ -1,11 +1,11 @@
-import React, {useState, useContext} from 'react';
+import {useState, useContext} from 'react';
 import {ThemeContext} from "../../context";
 
 const array = Array.from(Array(25).keys())
 
 export default function Constructor() {
-  const [selected, setSelected] = useState([]);
-  const [counter, setCounter] = useState(0);
+  const [selected, setSelected] = useState<number[]>([]);
+  const [counter, setCounter] = useState<number>(0);
 
   const { toggleTheme } = useContext(ThemeContext);
 

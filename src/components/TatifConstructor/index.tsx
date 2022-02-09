@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import Rate from "../Rate";
 
 //#2
 const rates = require("../../cards.json")
 
 export default function TarifConstructor() {
-  const [tarif, setTarif] = useState(); //undefined
+  const [tarif, setTarif] = useState<string>(); //undefined
 
   // Аналогично componentDidMount && componentWillUnmount
   useEffect(() => {
@@ -34,12 +34,12 @@ export default function TarifConstructor() {
     }
   },[tarif]);
 
-  const writeToLocalStorage = (id) => {
+  const writeToLocalStorage = (id:string) => {
     //console.log('writeToLocalStorage', id)
     localStorage.setItem('tarif', id);
   }
 
-  const handleChoose = (id) => {
+  const handleChoose = (id:string) => {
     setTarif(id);
     // writeToLocalStorage(id);
   }

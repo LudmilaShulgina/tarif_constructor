@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
-import Rate from "../Rate";
+import Rate, {RateProps} from "../Rate";
+import * as React from "react";
 
 //#2
 const rates = require("../../cards.json")
@@ -46,7 +47,7 @@ export default function TarifConstructor() {
 
   return (
     <div className="App">
-      {rates.map((rate) => <Rate
+      {rates.map((rate:RateProps) => <Rate
         key = {rate.id}
         highlighted = {rate.id === tarif}
         title = {rate.title}

@@ -1,5 +1,6 @@
 import {useState, useContext} from 'react';
 import {ThemeContext} from "../../context";
+import * as React from "react";
 
 const array = Array.from(Array(25).keys())
 
@@ -9,8 +10,10 @@ export default function Constructor() {
 
   const { toggleTheme } = useContext(ThemeContext);
 
-  const handleClick = (item) =>{
-    toggleTheme();
+  const handleClick = (item:number) =>{
+    if (toggleTheme) {
+      toggleTheme();
+    }
     setCounter(counter+1);
 
     // const newArr = new Set(selected); //  [0,5]

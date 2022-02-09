@@ -1,7 +1,7 @@
 import {useContext, useEffect} from 'react';
 import { Card } from 'antd';
 import { ThemeContext } from "../../context";
-import { WordsContext } from "../../wordsContext";
+import * as React from "react";
 
 export interface RateProps {
     id: string,
@@ -18,7 +18,6 @@ export default function Rate(props:RateProps) {
     const {id, title, price, speed, setHighlighted, highlighted } = props;
 
     const { theme } = useContext(ThemeContext);
-    const { getWords } = useContext(WordsContext);
 
     // Аналогично    componentDidUpdate:
     useEffect(() => {
@@ -28,7 +27,6 @@ export default function Rate(props:RateProps) {
     },[highlighted, id]);
 
     let handleHighlighted = () => {
-        getWords();
         setHighlighted(id);
     }
 
